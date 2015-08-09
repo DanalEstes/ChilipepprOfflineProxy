@@ -24,6 +24,11 @@ Allow Chilipeppr to run without an Internet connection.
   * a. **xxx**: 
   * b. **yyy**: More Instructions
 
+## Installation
+
+1. Windows
+  * a. Download the .zip file and extrace ChilipepprProxy.exe.  Put it where you can find it. **xxx**: 
+2. 
 ## Usage
 
 ## Rationale
