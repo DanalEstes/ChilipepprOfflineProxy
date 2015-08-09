@@ -23,7 +23,7 @@ my $IOselect = IO::Select->new();
 use File::Path;
 use Time::HiRes qw(gettimeofday tv_interval);
 use Data::Dumper;
-use Data::Hexdumper qw(hexdump);
+use Data::Hexdumper qw(hexdump); 
 use Carp;
 
 # Globals
@@ -333,10 +333,11 @@ sub fixupResponseOffline
 
 sub fixupResponseOnline
 {
+    print "\n\nIn fixup $getURL\n\n";
     if ($getURL =~ /dataget/)
     {
         # Provide an Allow Origin header to make getJSON happy
-        $response->push_header('Access-Control-Allow-Origin' => 'http://chilipeppr.com');
+        $response->add_header('Access-Control-Allow-Origin: http://chilipeppr.com');
     }
 }
 
