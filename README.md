@@ -1,5 +1,5 @@
 # ChilipepprOfflineProxy
-Allow Chilipeppr to run on machines with no Internet connection, such as shop floor. 
+Allow Chilipeppr to run without an Internet connection. 
 
 ## Table of Contents
 
