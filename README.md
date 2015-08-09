@@ -25,11 +25,11 @@ Allow Chilipeppr to run without an Internet connection.
 ## Installation
 
 1. Windows
-  * a. Download the .zip file and extract ChilipepprProxy.exe.  Put it where you can find it.
-  * b. Create a directory called "C:\OfflineHTML".  Other names and/or locations are acceptable by specifying a flag at runtime (see #Usage)
+  * Download the .zip file and extract ChilipepprProxy.exe.  Put it where you can find it.
+  * Create a directory called "C:\OfflineHTML".  Other names and/or locations are acceptable by specifying a flag at runtime (see #Usage)
 2. Linux
-  * a. Download the PERL source.  Put it where you can find it. 
-  * b. Edit the header of the source file to add the proper first line for your system.  This is usually something like **#!/usr/local/bin/perl**
+  * Download the PERL source.  Put it where you can find it. 
+  * Edit the header of the source file to add the proper first line for your system.  Something like **#!/usr/local/bin/perl**  
 3. Mac OSX
   * Coming Soon. If you already know how to run PERL programs from the command line on your Mac, go for it! 
 4. Other
