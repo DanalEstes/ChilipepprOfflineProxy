@@ -7,9 +7,9 @@ Allow Chilipeppr to run without an Internet connection.
 	- [Quick Setup (TL;DR)](#quick-setup)
 	- [Usage](#usage)
 	- [Installation](#installation)
+	- [Rationale](#rationale)
 	- [Todo](#todo)
 	- [Contributing](#contributing)
-	- [Rationale](#rationale)
 	- [License](#license)
 
 
@@ -30,8 +30,8 @@ Allow Chilipeppr to run without an Internet connection.
 2. Linux
   * a. Download the PERL source.  Put it where you can find it. 
   * b. Edit the header of the source file to add the proper first line for your system.  This is usually something like **#!/usr/local/bin/perl**
-3. Mac
-  * Coming Soon. 
+3. Mac OSX
+  * Coming Soon. If you already know how to run PERL programs from the command line on your Mac, go for it! 
 4. Other
   * Do whatever it takes to run a PERL program on your platform.
 
@@ -43,7 +43,8 @@ Chilipeppr Proxy: Command line flag -offline or -online required; all other flag
 Flags are:  
   -online
   -offline  
-  -pathprefix    Directory path used to save files when online, or serve them when offline. Read/Write access required.   Anything that works on your OS is acceptable.  
+  -pathprefix=   Directory path used to save files when online, or serve them when offline. Read/Write access required.   Anything that works on your OS is acceptable. 
+  -proxyport=    Port number that goes in browser proxy config. 
   -v             Verbosity. Supplying one or more -v flags prints additional diagnostic information.  
   -noauto        Supresses auto-config of Browser Proxy and clear of Browser Cache. Use only if these are causing problems.  
   -noanim        Supresses backspaces used for animation of console.  
@@ -72,10 +73,14 @@ The location where files will be created and stored or fetched.
 ## Rationale
 When I discovered Chilipeppr and showed it to others, the number one question was "Will it run offline?"
 
-## Inspiration and special thanks
+## Thanks to the contributors:
+* [Contributors list](https://github.com/DanalEstes/ChilipepprOfflineProxy/graphs/contributors)
 
-### Also thanks to the many contributors:
-* [contributors list](https://github.com/DanalEstes/ChilipepprOfflineProxy/graphs/contributors)
+## ToDo
+* Allow both -online and -offline to be specified.  -offline will cause the proxy to service requests from content in local files, just like normal. Additionally specifying the -online flag will direct the proxy to attempt an online fetch if the local file is not found.  Useful for "fill in the gaps". 
+
+##Contributing
+Contact me to join the project, and/or clone and create a pull request when you are ready. 
 
 ## License
 
