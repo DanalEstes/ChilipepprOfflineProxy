@@ -16,8 +16,8 @@ Allow Chilipeppr to run without an Internet connection.
 <a name="quick-setup"></a>
 ## Quick Setup (TL;DR)
 
-1. Install proxy binary (and/oror source) on an Internet connected machine. 
-2. Run proxy with the -offline flag, launch browser, clear browser cache, and launch chilipeppr.com/tinyg
+1. Install proxy binary (and/or source) on an Internet connected machine. 
+2. Run proxy with the -offline flag, launch browser, clear browser cache, and launch chilipeppr.com/tinyg  
    Expect much slower load than normal; retry if timouts or other errors. 
 3. Copy the OfflineHTML directory (and the ChilipepprOffline executable) to the non Internet connected machine. 
 4. Run proxy with -offline flag, lauch browser, and launch chilipeppr.com/tinyg
