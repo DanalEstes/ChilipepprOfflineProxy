@@ -72,7 +72,11 @@ The location where files will be created and stored or fetched.
   * Some parts of the console interface use backspaces (\b) to overtype, and therefore animiate.  Specifying this flag supresses all use of backspaces (and therefore all animation).  Useful if redirecting STDOUT and/or STDERR to a file. 
 
 ## Support
-Currently in **ALPHA TEST**, do not expect any stability. When you do have probelms, please include a capture of the command line session where the proxy is running, and a copy of the browser console log (F12 to access this in most browsers).  
+Currently in **ALPHA TEST**, do not expect any stability.  
+
+When problems occur (and they will), please include a capture of the command line session where the proxy is running, and a copy of the browser console log (F12 to access this in most browsers).  
+
+Discussion thread here: (coming soon, link to google group)
 
 ## Rationale
 When I discovered Chilipeppr and showed it to others, the number one question was "Will it run offline?"
