@@ -33,23 +33,43 @@ Allow Chilipeppr to run without an Internet connection.
 3. Mac
   * Coming Soon. 
 4. Other
-  * Do whatever it takes to run a PERL program on your platform. 
+  * Do whatever it takes to run a PERL program on your platform.
+
 ## Usage
 
-chilipeppr.pl -h
-
-Chilipeppr Proxy: Command line flag -offline or -online required; all other flags optional.
-  Flags are:
+```
+chilipeppr.pl -h  
+Chilipeppr Proxy: Command line flag -offline or -online required; all other flags optional.  
+Flags are:  
   -online
-  -offline
-  -pathprefix    Directory path used to save files when online, or serve them when offline. Read/Write access required.   Anything that works on your OS is acceptable.
-  -v             Verbosity. Supplying one or more -v flags prints additional diagnostic information.
-  -noauto        Supresses auto-config of Browser Proxy and clear of Browser Cache. Use only if these are causing problems.
-  -noanim        Supresses backspaces used for animation of console.
+  -offline  
+  -pathprefix    Directory path used to save files when online, or serve them when offline. Read/Write access required.   Anything that works on your OS is acceptable.  
+  -v             Verbosity. Supplying one or more -v flags prints additional diagnostic information.  
+  -noauto        Supresses auto-config of Browser Proxy and clear of Browser Cache. Use only if these are causing problems.  
+  -noanim        Supresses backspaces used for animation of console.  
+```
+Flags explained:  
 
+1. **-online**  
+Requests are fetched from the Internet AND stored in local files for later use.  
+2. **-offline**  
+Requests are fetched from local files only.  If a file cannot be found, a 404 "Not Found" HTML page is returned.  
+1. **-pathprefix=**  
+The location where files will be created and stored or fetched.  
+  * Read/Write access requried for -online mode.  Also must be able to create new directories and new files.  
+  * Read access is find for -offline mode.  
+  * Default is "/OfflineHTML"  
+1. **-noauto**  
+  * When running on Windows, an attempt is made to auto-confiure the Windows proxy settings. These are the same settings controlled by the "Lan Settings" dialog in Internet Explorer. These tend to affect **all** clients on Windows, so it is a good idea to not run much else when capturing the online session.  
+  * The proxy attempts to put activate this configuration when starting, and remove it when cleanly stopping.  If the proxy crashes, it may be easist to re-start it, and cleanly stop it (Ctl-C) to turn these settings off. You can also use the dialog in Internet Explorer, or you can click start and type "Configure Proxy Server" and press enter.  
+  * Other platforms: Configure your proxy as appropriate. 
+  * Default configuration is an IP address of "127.0.0.1" in the hostname field, and "8888" in the port number field. 
+1. **-proxyport=**
+  * This is the port the browser should use in proxy settings.  Default is 8888.
+1. **-noanim**  
+  * Some parts of the console interface use backspaces (\b) to overtype, and therefore animiate.  Specifying this flag supresses all use of backspaces (and therefore all animation).  Useful if redirecting STDOUT and/or STDERR to a file. 
 
 ## Rationale
-
 When I discovered Chilipeppr and showed it to others, the number one question was "Will it run offline?"
 
 ## Inspiration and special thanks
