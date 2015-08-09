@@ -1,9 +1,7 @@
 # PERL program to allow chilipeppr to run offline.
-# Online,  invoke with argument of 'save', configure browser to proxy 127.0.0.1:8888, clear browser cache, and open chilippepr.com/tinyg
-# Offline, run with no argument, and same proxy setting in browser.
+#
 # Copyright 2015 by danal.estes@gmail.com; all rights reserved.
 # Distributed under the MIT license.
-#
 
 # Make animation print statements work, by asking for no buffering.
 select(STDERR);
