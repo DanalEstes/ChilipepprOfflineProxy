@@ -7,6 +7,7 @@ Allow Chilipeppr to run without an Internet connection.
 	- [Quick Setup (TL;DR)](#quick-setup)
 	- [Usage](#usage)
 	- [Installation](#installation)
+	- [Support](#support)
 	- [Rationale](#rationale)
 	- [Todo](#todo)
 	- [Contributing](#contributing)
@@ -45,9 +46,9 @@ Flags are:
   -offline  
   -pathprefix=   Directory path used to save files when online, or serve them when offline. Read/Write access required.   Anything that works on your OS is acceptable. 
   -proxyport=    Port number that goes in browser proxy config. 
-  -v             Verbosity. Supplying one or more -v flags prints additional diagnostic information.  
   -noauto        Supresses auto-config of Browser Proxy and clear of Browser Cache. Use only if these are causing problems.  
   -noanim        Supresses backspaces used for animation of console.  
+  -v             Verbosity. Supplying one or more -v flags prints additional diagnostic information.  
 ```
 Flags explained:  
 
@@ -69,6 +70,9 @@ The location where files will be created and stored or fetched.
   * This is the port the browser should use in proxy settings.  Default is 8888.
 1. **-noanim**  
   * Some parts of the console interface use backspaces (\b) to overtype, and therefore animiate.  Specifying this flag supresses all use of backspaces (and therefore all animation).  Useful if redirecting STDOUT and/or STDERR to a file. 
+
+## Support
+Currently in **ALPHA TEST**, do not expect any stability. When you do have probelms, please include a capture of the command line session where the proxy is running, and a copy of the browser console log (F12 to access this in most browsers).  
 
 ## Rationale
 When I discovered Chilipeppr and showed it to others, the number one question was "Will it run offline?"
