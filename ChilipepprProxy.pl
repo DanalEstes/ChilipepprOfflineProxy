@@ -27,7 +27,7 @@ use Carp;
 # Globals
 my $online         = 0;
 my $ofline         = 0;
-my $animation      = 0;
+my $animCounter    = 0;
 my $animchars      = '\|/-';
 my $browserSockets = '';
 my $browserSocket  = '';
@@ -105,7 +105,7 @@ while (1)
 
 sub receiveProxyRequest
 {
-    print substr($animchars, $animation++ % 4, 1) if ($anim);
+    print substr($animchars, $animCounter++ % 4, 1) if ($anim);
     $browserSocket = $browserSockets->accept();
     print "\b"              if ($anim);
     return 0                if (not defined $browserSocket);
@@ -306,7 +306,7 @@ sub printQueryFini
 
 # Fixups ########################################################################################################################################
 # MAINTENANCE NOTE:  If Chilipeppr code changes, that might necessitate changes to these fixups.
-# DESIGN NOTE: The content of files stored for later use is never change; all fixups occur on the fly.
+# DESIGN NOTE: The content of files stored for later use is never changed; all fixups occur on the fly.
 
 sub fixupResponseOffline
 {
@@ -321,7 +321,7 @@ sub fixupResponseOffline
     if ($getURL =~ /dataget/)
     {
         # Provide an Allow Origin header to make getJSON happy
-        $response =~ s@^(.*)(\r\n|\n{2,})@$1\nAccess-Control-Allow-Origin: http://chilipeppr.com \n\n@is;
+        #$response =~ s@^(.*)(\r\n|\n{2,})@$1\nAccess-Control-Allow-Origin: http://chilipeppr.com \n\n@is;
 
         # And make the internals of the file being fetched into simple json as well.
         $response =~ s@jQuery.*\({@{@sm;
@@ -428,7 +428,9 @@ sub enableProxy
         print " Note: Exiting  via \'Ctl-C\' will properly remove this setting\n";
         print " Note: If Chilipeppr Proxy crashes, you may wish to restart it and cleanly exit via Ctl-C (to auto-remove proxy).\n";
         `reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\" /v ProxyServer /t REG_SZ /d 127.0.0.1:$proxyPort /f`;
+        `reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\" /v ProxyOverride /t REG_SZ /d  "<local>" /f`;
         `reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\" /v ProxyEnable /t REG_DWORD /d 1 /f`;
+
 
         my $INTERNET_OPTION_REFRESH          = 95;
         my $INTERNET_OPTION_SETTINGS_CHANGED = 37;
